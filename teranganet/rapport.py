@@ -1,3 +1,4 @@
+# Module de generation du rapport d'audit au format JSON
 import json
 import os
 from datetime import datetime
