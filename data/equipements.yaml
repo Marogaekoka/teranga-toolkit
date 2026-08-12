@@ -1,3 +1,27 @@
-seuils:
-  vent_kmh: 35
-  temperature_c: 35
+sites:
+  - id: dakar-01
+    nom: Site Principal Dakar
+    latitude: 14.6928
+    longitude: -17.4467
+    equipements:
+      - nom: Routeur-Core-01
+        ip: 192.168.1.1
+        type: routeur
+        est_actif: true
+        cpu_usage: 42
+      - nom: Switch-Etage1
+        ip: 192.168.1.2
+        type: switch
+        est_actif: true
+        cpu_usage: 18
+
+  - id: thies-02
+    nom: Agence Thiès
+    latitude: 14.7910
+    longitude: -16.9256
+    equipements:
+      - nom: Routeur-Thies
+        ip: 10.0.1.1
+        type: routeur
+        est_actif: false
+        cpu_usage: 0
