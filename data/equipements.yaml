@@ -4,16 +4,16 @@ sites:
     latitude: 14.6928
     longitude: -17.4467
     equipements:
-      - nom: Routeur-Core-01
+      - nom: Routeur-Core-Dakar
         ip: 192.168.1.1
         type: routeur
         est_actif: true
         cpu_usage: 42
-      - nom: Switch-Etage1
+      - nom: Switch-Principal-Dakar
         ip: 192.168.1.2
         type: switch
         est_actif: true
-        cpu_usage: 18
+        cpu_usage: 88
 
   - id: thies-02
     nom: Agence Thiès
@@ -25,3 +25,30 @@ sites:
         type: routeur
         est_actif: false
         cpu_usage: 0
+
+  - id: saintlouis-03
+    nom: Agence Saint-Louis
+    latitude: 16.0326
+    longitude: -16.4818
+    equipements:
+      - nom: Routeur-SL
+        ip: 10.0.2.1
+        type: routeur
+        est_actif: true
+        cpu_usage: 35
+      - nom: Serveur-Web-SL
+        ip: 10.0.2.10
+        type: serveur
+        est_actif: true
+        cpu_usage: 92
+
+  - id: ziguinchor-04
+    nom: Agence Ziguinchor
+    latitude: 12.5833
+    longitude: -16.2719
+    equipements:
+      - nom: Routeur-Zig
+        ip: 10.0.3.1
+        type: routeur
+        est_actif: true
+        cpu_usage: 15

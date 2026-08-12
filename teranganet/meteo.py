@@ -3,8 +3,8 @@ import requests
 
 def obtenir_meteo_site(latitude, longitude):
     """
-    Interroge l'API Open-Meteo pour obtenir les métriques météo actuelles
-    en fonction des coordonnées GPS du site.
+    Interroge l'API Open-Meteo pour obtenir les métriques météo actuelles.
+    Gère les erreurs réseau et de délai d'attente (timeout).
     """
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
@@ -22,11 +22,14 @@ def obtenir_meteo_site(latitude, longitude):
         return {
             "temperature": current.get("temperature"),
             "vent_vitesse": current.get("windspeed"),
-            "code_meteo": current.get("weathercode")
+            "code_meteo": current.get("weathercode"),
+            "statut": "OK"
         }
-    except Exception as e:
-        print(f"[AVERTISSEMENT] Échec de la collecte météo ({latitude}, {longitude}): {e}")
-        return {
-            "temperature": None,
-            "erreur": str(e)
-        }
+
+    except requests.exceptions.Timeout:
+        print(f"[AVERTISSEMENT] Timeout lors de la connexion API pour ({latitude}, {longitude})")
+        return {"temperature": None, "vent_vitesse": None, "statut": "TIMEOUT"}
+
+    except requests.exceptions.RequestException as e:
+        print(f"[AVERTISSEMENT] Erreur réseau/API météo ({latitude}, {longitude}): {e}")
+        return {"temperature": None, "vent_vitesse": None, "statut": "ERREUR"}
