@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+rapports/*.json
+!rapports/.gitkeep
