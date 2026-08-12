@@ -1,3 +1,4 @@
+# Configuration des seuils d'alerte pour l'audit des equipements
 sites:
   - code: DKR
     nom: Dakar

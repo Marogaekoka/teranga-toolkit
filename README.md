@@ -24,3 +24,6 @@
    ```bash
    git clone [https://github.com/Marogaekoka/teranga-toolkit.git](https://github.com/Marogaekoka/teranga-toolkit.git)
    cd teranga-toolkit
+ ## 👥 Auteurs & Répartition du travail
+* **Membre A :** Gestion de l'inventaire YAML (`data/equipements.yaml`), intégration de l'API Open-Meteo (`teranganet/meteo.py`) et tests unitaires (`tests/test_inventaire.py`).
+* **Membre B :** Logique du moteur d'audit (`teranganet/rapport.py`), interface CLI (`toolkit.py`), documentation (`README.md`) et gestion des dépendances (`requirements.txt`).  
