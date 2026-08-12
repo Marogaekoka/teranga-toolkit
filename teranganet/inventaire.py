@@ -1,3 +1,4 @@
+# Module de chargement et de structuration de l'inventaire des equipements
 import yaml
 
 
